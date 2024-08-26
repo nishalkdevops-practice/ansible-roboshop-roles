@@ -6,5 +6,11 @@
 - name: Install nodejs 
   ansible.builtin.import_role:
     name: common 
-    tasks_from: nodejs 
+    tasks_from: nodejs
     
+
+- name: setup application 
+  ansible.builtin.import_role:
+    name: common 
+    tasks_from: app-setup
+

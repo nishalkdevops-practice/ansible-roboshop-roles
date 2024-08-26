@@ -1,0 +1,12 @@
+  - name: Copy mongo repo file to yum.repo
+    ansible.builtin.copy:
+      src: mongodb.repo
+      dest: /etc/yum.repos.d/mongo.repo
+  
+  - name: install mongodb
+    ansible.builtin.yum: 
+      name: mongodb-org-shell
+      state: installed
+
+  - name: "loading schema {{catalogue}} data" 
+    ansible.builtin.command: mongo --host mongodb.nishalkdevops.online < /app/schema/catalogue.js

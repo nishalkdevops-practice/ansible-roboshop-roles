@@ -9,5 +9,5 @@
       name: mongodb-org-shell
       state: installed
 
-  - name: "loading schema {{catalogue}} data" 
-    ansible.builtin.command: mongo --host mongodb.nishalkdevops.online < /app/schema/catalogue.js
+  - name: "loading schema {{component}} data" 
+    ansible.builtin.command: mongo --host mongodb.nishalkdevops.online < /app/schema/{{component}}.js
